@@ -22,7 +22,7 @@ export const ModalContainer = styled.div`
   border-radius: 24px;
   padding: 15px;
   max-width: 320px;
-  z-index: 100;
+  z-index: 200;
   overflow-y: auto;
   max-height: 80vh;
 

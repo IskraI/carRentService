@@ -1,6 +1,7 @@
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import { carsReducer } from './cars-slice';
 import { favoriteReducer } from './favorite-slice';
+import totalCarsReducer from './totalCarsSlice';
 // import { filterReducer } from './filterSlice';
 import {
   persistStore,
@@ -17,12 +18,13 @@ import storage from 'redux-persist/lib/storage';
 const persistConfig = {
   key: 'root',
   storage,
-  whitelist: ['favorite'],
+  whitelist: ['favorite', 'totalCars'],
 };
 
 const rootReducer = combineReducers({
   cars: carsReducer,
   favorite: favoriteReducer,
+  totalCars: totalCarsReducer,
 });
 const persistUsersReducer = persistReducer(persistConfig, rootReducer);
 

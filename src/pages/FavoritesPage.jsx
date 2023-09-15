@@ -1,18 +1,20 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import CarList from '../components/CarList/CarList';
-import { selectCars } from '../redux/cars-selector';
+import { selectTotalCars } from '../redux/totalCarsSlice';
+import { Title, Container } from './HomePage.styled';
 
 const Favorites = () => {
-  const cars = useSelector(selectCars);
+  const totalCars = useSelector(selectTotalCars);
   const favorite = useSelector(state => state.favorite);
-  const favoriteCars = cars.filter(car => favorite.includes(car.id));
+  const favoriteCars = totalCars.filter(car => favorite.includes(car.id));
+
   return (
-    <>
-      <h2>My favorites cars</h2>
+    <Container>
+      <Title>My favorites cars</Title>
 
       <CarList cars={favoriteCars} />
-    </>
+    </Container>
   );
 };
 

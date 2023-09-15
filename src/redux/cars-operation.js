@@ -15,7 +15,7 @@ export const fetchCars = createAsyncThunk(
       });
 
       const data = responce.data;
-      console.log('data', data);
+
       return data;
     } catch (e) {
       return thunkAPI.rejectWithValue(e.message);

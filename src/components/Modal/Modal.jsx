@@ -87,9 +87,9 @@ const Modal = ({
     <Backdrop onClick={onOverlay} className="show">
       <ModalContainer className="show">
         <ContentWrapper>
-          <buttom type="button" aria-label="close button" onClick={onClose}>
+          <button type="button" aria-label="close button" onClick={onClose}>
             <CloseIcon />
-          </buttom>
+          </button>
           <CarImg src={img} alt={make} />
           <InfoWrapper>
             <MainInfo>

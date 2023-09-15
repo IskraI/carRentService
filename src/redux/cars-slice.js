@@ -25,7 +25,16 @@ const carsSlice = createSlice({
     [fetchCars.fulfilled](state, action) {
       state.isLoading = false;
       state.error = null;
-      state.items = [...state.items, ...action.payload];
+
+      const hasCommonElements = action.payload.some(payloadItem => {
+        return state.items.some(stateItem => stateItem.id === payloadItem.id);
+      });
+      console.log('hasCommonElements', hasCommonElements);
+      if (hasCommonElements) {
+        state.items = action.payload;
+      } else {
+        state.items = [...state.items, ...action.payload];
+      }
     },
   },
 });

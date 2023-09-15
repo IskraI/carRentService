@@ -1,4 +1,5 @@
 import React from 'react';
+import axios from 'axios';
 import CarList from '../components/CarList/CarList';
 import { useDispatch, useSelector } from 'react-redux';
 import { useState, useEffect } from 'react';
@@ -11,29 +12,35 @@ import {
 import { fetchCars } from 'redux/cars-operation';
 import { SectionCatalog, LoadMoreBtn } from './CatalogPage.styled';
 import { Container } from '../pages/HomePage.styled';
+import { setTotalCars } from '../redux/totalCarsSlice';
+import { selectTotalCars } from '../redux/totalCarsSlice';
 import { getTotalCars } from '../api/carsApi';
 
 const Catalog = () => {
   const cars = useSelector(selectCars);
-  // const [visibleCars, setVisibleCars] = useState(8);
   const error = useSelector(selectError);
+  const totalCars = useSelector(selectTotalCars);
 
   const isLoading = useSelector(selectIsLoading);
   const dispatch = useDispatch();
 
-  // useEffect(() => {
-  //   dispatch(fetchCars(1));
-  // }, []);
-
-  // const loadMore = () => {
-  //   setVisibleCars(prevVisibleCars => prevVisibleCars + 8);
-  // };
-
-  const totalCars = cars.length;
-
-  console.log('totalCars', totalCars);
   const [page, setPage] = useState(1);
   const [prevPage, setPrevPage] = useState(0);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const total = await getTotalCars();
+
+        dispatch(setTotalCars(total));
+      } catch (error) {
+        console.error('Error fetching total cars:', error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
   useEffect(() => {
     if (prevPage !== page) {
       dispatch(fetchCars(page));
@@ -41,44 +48,34 @@ const Catalog = () => {
     }
   }, [page]);
 
-  // const getCars = async page => {
-  //   setIsLoading(true);
-  //   try {
-  //     const cars = await CarsService.getAdverts(page);
-
-  //     setCars(prevCars => [...prevCars, ...cars]);
-  //   } catch (error) {
-  //     setError(error.message);
-  //   } finally {
-  //     setIsLoading(false);
-  //   }
-  // };
-
   const loadMore = () => {
     setPage(prevPage => prevPage + 1);
   };
-
+  console.log('cars.length', cars.length);
+  console.log('totalCars.length', totalCars.length);
   return (
-    <SectionCatalog>
-      {cars?.length !== 0 && (
-        <>
-          {/* <Filter /> */}
-          <CarList cars={cars} />
-        </>
-      )}
-      {/* {visibleCars < cars.length && (
-        <LoadMoreBtn onClick={loadMore}>Load More</LoadMoreBtn>
-      )} */}
-      <LoadMoreBtn onClick={loadMore}>Load More</LoadMoreBtn>
-      {error && cars?.length === 0 && <p>{error}</p>}
-      {!isLoading && !error && cars.length === 0 && (
-        <p>
-          There is no contacts yet. Use the form above to add your first
-          contact.
-        </p>
-      )}
-      {cars?.length === 0 && isLoading && <>Load</>}
-    </SectionCatalog>
+    <Container>
+      <SectionCatalog>
+        {cars?.length !== 0 && (
+          <>
+            {/* <Filter /> */}
+            <CarList cars={cars} />
+          </>
+        )}
+        {totalCars.length > cars.length && (
+          <LoadMoreBtn onClick={loadMore}>Load More</LoadMoreBtn>
+        )}
+        {/* <LoadMoreBtn onClick={loadMore}>Load More</LoadMoreBtn> */}
+        {error && cars?.length === 0 && <p>{error}</p>}
+        {!isLoading && !error && cars.length === 0 && (
+          <p>
+            There is no contacts yet. Use the form above to add your first
+            contact.
+          </p>
+        )}
+        {cars?.length === 0 && isLoading && <>Load</>}
+      </SectionCatalog>
+    </Container>
   );
 };
 
