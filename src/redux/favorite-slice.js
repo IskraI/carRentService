@@ -5,10 +5,10 @@ export const favoriteSlice = createSlice({
   initialState: [], // Изменено на пустой массив
   reducers: {
     addFavoriteList: (state, action) => {
-      state.push(action.payload); // Мы используем push для добавления элемента в массив
+      state.push(action.payload);
     },
     removeFavoriteList: (state, action) => {
-      return state.filter(item => item !== action.payload); // Возвращаем новый массив без элемента для удаления
+      return state.filter(item => item !== action.payload);
     },
   },
 });
