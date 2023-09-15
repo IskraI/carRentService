@@ -1,5 +1,5 @@
 import React from 'react';
-import CarItem from '../Car/Car';
+import CarItem from '../CarItem/CarItem';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import Filter from '../Filter/Filter';
@@ -15,14 +15,13 @@ import { SectionContainer, List } from './CarList.styled';
 //     .sort((a, b) => a.name.localeCompare(b.name));
 // };
 
-const CarList = () => {
-  const cars = useSelector(selectCars);
+const CarList = ({ cars }) => {
+  // const cars = useSelector(selectCars);
   const filter = useSelector(selectFilter);
   // const visibleCars = getVisibleCars(cars, filter);
 
   return (
     <SectionContainer>
-      <Filter />
       <List>
         {cars.map(car => (
           <CarItem

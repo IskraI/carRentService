@@ -9,10 +9,11 @@ import {
   selectCars,
 } from '../redux/cars-selector';
 import { fetchCars } from 'redux/cars-operation';
+import { SectionCatalog } from './CatalogPage.styled';
+import { Container } from '../pages/HomePage.styled';
 
 const Catalog = () => {
   const cars = useSelector(selectCars);
-  console.log('first', cars);
   const error = useSelector(selectError);
 
   const isLoading = useSelector(selectIsLoading);
@@ -23,11 +24,11 @@ const Catalog = () => {
   }, [dispatch]);
 
   return (
-    <>
+    <SectionCatalog>
       {cars?.length !== 0 && (
         <>
-          {/* <Filter /> */}
-          <CarList />
+          <Filter />
+          <CarList cars={cars} />
         </>
       )}
       {error && cars?.length === 0 && <p>{error}</p>}
@@ -38,7 +39,7 @@ const Catalog = () => {
         </p>
       )}
       {cars?.length === 0 && isLoading && <>Load</>}
-    </>
+    </SectionCatalog>
   );
 };
 

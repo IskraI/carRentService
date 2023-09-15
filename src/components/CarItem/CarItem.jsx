@@ -19,7 +19,7 @@ import {
   HeartIcon,
   IconBtn,
   HeartIconBlue,
-} from './Car.styled';
+} from './CarItem.styled';
 
 import {
   addFavoriteList,

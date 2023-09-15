@@ -1,17 +1,22 @@
-.section {
-  display: flex;
+import styled from '@emotion/styled';
+
+export const SectionCatalog = styled.div`
+  /* display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 4px; */
+  margin-top: 10px;
+
   height: 100vh;
-}
-.title {
-  margin: 8px auto;
-  color: #9f0697;
-}
-.titleSecondary {
-  margin: 12px auto;
-  color: #40053d;
-}
+`;
+
+// .title {
+//   margin: 8px auto;
+//   color: #9f0697;
+// }
+// .titleSecondary {
+//   margin: 12px auto;
+//   color: #40053d;
+// }
 /* export const ContactsPageWrap = styled.div`
   display: flex;
   flex-direction: column;
