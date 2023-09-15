@@ -6,7 +6,6 @@ import { selectCars } from '../redux/cars-selector';
 const Favorites = () => {
   const cars = useSelector(selectCars);
   const favorite = useSelector(state => state.favorite);
-  console.log('f', favorite);
   const favoriteCars = cars.filter(car => favorite.includes(car.id));
   return (
     <>

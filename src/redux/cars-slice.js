@@ -25,7 +25,7 @@ const carsSlice = createSlice({
     [fetchCars.fulfilled](state, action) {
       state.isLoading = false;
       state.error = null;
-      state.items = action.payload;
+      state.items = [...state.items, ...action.payload];
     },
   },
 });

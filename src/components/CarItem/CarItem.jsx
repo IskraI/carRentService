@@ -49,7 +49,7 @@ const CarItem = ({ car }) => {
     mileage,
   } = car;
   const favorite = useSelector(state => state.favorite);
-  console.log('favorite', favorite);
+  // console.log('favorite', favorite);
   const followStatus = favorite.includes(id);
 
   const [isModalOpen, setIsModalOpen] = useState(false);

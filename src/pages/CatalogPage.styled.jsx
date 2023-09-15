@@ -9,53 +9,23 @@ export const SectionCatalog = styled.div`
   height: 100vh;
 `;
 
-// .title {
-//   margin: 8px auto;
-//   color: #9f0697;
-// }
-// .titleSecondary {
-//   margin: 12px auto;
-//   color: #40053d;
-// }
-/* export const ContactsPageWrap = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  height: 100%;
-`;
-
-
-
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-`;
-
-export const MainTitle = styled.h1`
-  padding-left: 32px;
-`;
-
-export const SectionTitle = styled.h2`
-  padding-left: 32px;
-`;
-
-export const ContactsWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  border: 1px solid #505050;
-  padding: 16px;
+export const LoadMoreBtn = styled.button`
+  width: 274px;
+  padding: 12px 0;
+  color: #fff;
+  font-family: Manrope;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 20px;
   border-radius: 12px;
-`;
+  background: #3470ff;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0px 3.43693px 3.43693px 0px rgba(0, 0, 0, 0.25);
+  margin-top: 28px;
+  transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
-export const InfoMessage = styled.p`
-  font-weight: 700;
-  text-align: center;
-  color: #505050;
+  &:hover {
+    background: #0b44cd;
+  }
 `;
-
-export const ErrorMessage = styled.p`
-  font-weight: 700;
-  text-align: center;
-  color: #fc8181;
-`; */
