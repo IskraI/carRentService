@@ -1,7 +1,7 @@
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import { carsReducer } from './cars-slice';
 import { favoriteReducer } from './favorite-slice';
-import totalCarsReducer from './totalCarsSlice';
+import totalCarsReducer from './totalCars-slice';
 // import { filterReducer } from './filterSlice';
 import {
   persistStore,

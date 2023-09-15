@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import CarList from '../components/CarList/CarList';
-import { selectTotalCars } from '../redux/totalCarsSlice';
+import { selectTotalCars } from '../redux/totalCars-slice';
 import { Title, Container } from './HomePage.styled';
 
 const Favorites = () => {

@@ -29,7 +29,6 @@ const carsSlice = createSlice({
       const hasCommonElements = action.payload.some(payloadItem => {
         return state.items.some(stateItem => stateItem.id === payloadItem.id);
       });
-      console.log('hasCommonElements', hasCommonElements);
       if (hasCommonElements) {
         state.items = action.payload;
       } else {

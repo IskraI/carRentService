@@ -4,8 +4,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import Filter from '../Filter/Filter';
 import { selectCars, selectFilter } from 'redux/cars-selector';
-import { fetchCars } from 'redux/cars-operation';
-import { nanoid } from 'nanoid';
 import { SectionContainer, List } from './CarList.styled';
 
 // const getVisibleCars = (cars, filter) => {

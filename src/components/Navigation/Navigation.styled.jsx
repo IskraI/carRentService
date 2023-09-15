@@ -6,9 +6,9 @@ export const Nav = styled.nav`
   padding: 0;
   margin: 0;
   display: flex;
+
   justify-content: center;
   gap: 100px;
-
 `;
 
 export const NavigationLink = styled(NavLink)`
@@ -19,13 +19,13 @@ export const NavigationLink = styled(NavLink)`
   display: inline-flex;
   align-items: center;
   text-align: center;
-  color: #15687f;
+  color: #727f83;
   transition: color 0.3s ease;
   &.active {
-    color: #727f83;
+    color: #15687f;
   }
   &:hover,
   &:focus {
-    color: #727f83;
+    color: #15687f;
   }
 `;
