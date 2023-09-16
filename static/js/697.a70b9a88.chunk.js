@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkreact_homework_template=self.webpackChunkreact_homework_template||[]).push([[697],{5697:function(e,r,t){t.r(r);t(2791);var n=t(9434),c=t(5530),a=t(9562),s=t(4420),u=t(184);r.default=function(){var e=(0,n.v9)(a.MS),r=(0,n.v9)((function(e){return e.favorite})),t=e.filter((function(e){return r.includes(e.id)}));return(0,u.jsxs)(s.W2,{children:[(0,u.jsx)(s.Dx,{children:"My favorites cars"}),(0,u.jsx)(c.Z,{cars:t})]})}}}]);
+//# sourceMappingURL=697.a70b9a88.chunk.js.map
