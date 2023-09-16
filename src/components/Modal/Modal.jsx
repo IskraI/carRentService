@@ -5,7 +5,7 @@ import { createPortal } from 'react-dom';
 import {
   ModalContainer,
   Backdrop,
-  BtnClose,
+  // BtnClose,
   CloseIcon,
   CarImg,
   InfoWrapper,

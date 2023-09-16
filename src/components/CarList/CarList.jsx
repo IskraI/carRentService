@@ -1,9 +1,8 @@
 import React from 'react';
 import CarItem from '../CarItem/CarItem';
-import { useDispatch, useSelector } from 'react-redux';
-import { useEffect } from 'react';
-import Filter from '../Filter/Filter';
-import { selectCars, selectFilter } from 'redux/cars-selector';
+// import {  useSelector } from 'react-redux';
+
+// import {  selectFilter } from 'redux/cars-selector';
 import { SectionContainer, List } from './CarList.styled';
 
 // const getVisibleCars = (cars, filter) => {
@@ -15,7 +14,7 @@ import { SectionContainer, List } from './CarList.styled';
 
 const CarList = ({ cars }) => {
   // const cars = useSelector(selectCars);
-  const filter = useSelector(selectFilter);
+  // const filter = useSelector(selectFilter);
   // const visibleCars = getVisibleCars(cars, filter);
 
   return (
