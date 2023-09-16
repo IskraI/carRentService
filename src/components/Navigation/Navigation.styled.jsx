@@ -3,11 +3,11 @@ import { NavLink } from 'react-router-dom';
 
 export const Nav = styled.nav`
   list-style: none;
-  padding: 0;
-  margin: 0;
+  padding: 0 50px;
+  margin: auto;
   display: flex;
+  width: 1240px;
 
-  justify-content: center;
   gap: 100px;
 `;
 
@@ -21,9 +21,13 @@ export const NavigationLink = styled(NavLink)`
   text-align: center;
   color: #727f83;
   transition: color 0.3s ease;
+  &:last-child {
+    margin-left: auto;
+  }
   &.active {
     color: #15687f;
   }
+
   &:hover,
   &:focus {
     color: #15687f;

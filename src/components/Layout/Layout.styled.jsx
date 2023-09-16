@@ -9,6 +9,5 @@ export const Container = styled.div`
 export const MainSection = styled.main`
   background-color: #f0f0f0;
   color: #fff;
-  text-align: center;
   padding: 0;
 `;
