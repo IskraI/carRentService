@@ -3,14 +3,14 @@ import React from 'react';
 import CarList from '../components/CarList/CarList';
 import { useDispatch, useSelector } from 'react-redux';
 import { useState, useEffect } from 'react';
-import Filter from '../components/Filter/Filter';
+// import Filter from '../components/Filter/Filter';
 import {
   selectIsLoading,
   selectError,
   selectCars,
 } from '../redux/cars-selector';
 import { fetchCars } from 'redux/cars-operation';
-import { SectionCatalog, LoadMoreBtn } from './CatalogPage.styled';
+import { LoadMoreBtn } from './CatalogPage.styled';
 import { Container } from '../pages/HomePage.styled';
 import { setTotalCars, selectTotalCars } from '../redux/totalCars-slice';
 import { getTotalCars } from '../api/carsApi';
@@ -38,7 +38,7 @@ const Catalog = () => {
     };
 
     fetchData();
-  }, []);
+  }, [dispatch]);
 
   useEffect(() => {
     if (prevPage !== page) {
