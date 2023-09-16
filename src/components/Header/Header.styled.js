@@ -2,6 +2,7 @@ import styled from '@emotion/styled';
 
 export const AppBar = styled.header`
   margin: 0px;
+  /* height: 45px; */
   font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
   backdrop-filter: blur(10px);
   background-color: #00466e1a;

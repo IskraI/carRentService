@@ -11,7 +11,7 @@ import {
 } from '../redux/cars-selector';
 import { fetchCars } from 'redux/cars-operation';
 import { LoadMoreBtn } from './CatalogPage.styled';
-import { Container } from '../pages/HomePage.styled';
+import { Container, Title } from '../pages/HomePage.styled';
 import { setTotalCars, selectTotalCars } from '../redux/totalCars-slice';
 import { getTotalCars } from '../api/carsApi';
 
@@ -53,6 +53,7 @@ const Catalog = () => {
 
   return (
     <Container>
+      <Title></Title>
       {isLoading ||
         (cars?.length !== 0 ? (
           <>

@@ -2,7 +2,11 @@ import styled from '@emotion/styled';
 import hero from '../img/ban_carent.jpg';
 import { NavLink } from 'react-router-dom';
 export const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   max-width: 1240px;
+  margin: auto;
 `;
 
 export const ContainerHero = styled.div`
@@ -19,7 +23,7 @@ export const ContainerHero = styled.div`
   background-repeat: no-repeat;
   background-position: center;
   width: 100%;
-  height: calc(100vh - 45px);
+  height: calc(100vh - 44px);
 `;
 
 export const Title = styled.h1`
@@ -47,7 +51,7 @@ export const TitleBlock = styled.div`
   padding: 12px;
 `;
 export const TextHero = styled.p`
-  color: #195858;
+  color: #268080;
 
   font-weight: 600;
   font-style: italic;
