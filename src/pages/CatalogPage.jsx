@@ -45,7 +45,7 @@ const Catalog = () => {
       dispatch(fetchCars(page));
       setPrevPage(page);
     }
-  }, [page]);
+  }, [dispatch, page, prevPage]);
 
   const loadMore = () => {
     setPage(prevPage => prevPage + 1);
