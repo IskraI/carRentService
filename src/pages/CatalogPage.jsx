@@ -21,7 +21,6 @@ const Catalog = () => {
   const error = useSelector(selectError);
   const totalCars = useSelector(selectTotalCars);
 
-  const isLoading = useSelector(selectIsLoading);
   const dispatch = useDispatch();
 
   const [page, setPage] = useState(1);
