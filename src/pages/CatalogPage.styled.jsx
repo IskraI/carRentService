@@ -10,13 +10,12 @@ export const SectionCatalog = styled.div`
 export const LoadMoreBtn = styled.button`
   width: 274px;
   padding: 12px 0;
-  color: #fff;
-  font-family: Manrope;
+  color: #3470ff;
+  font-family: "Manrope";
   font-size: 14px;
-  font-weight: 600;
-  line-height: 20px;
-  border-radius: 12px;
-  background: #3470ff;
+  font-weight: 500;
+  line-height: 24px;
+ text-decoration: underline;
   border: none;
   cursor: pointer;
  margin: auto
@@ -25,6 +24,6 @@ export const LoadMoreBtn = styled.button`
   transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
   &:hover {
-    background: #0b44cd;
+    color: #0B44CD;
   }
 `;

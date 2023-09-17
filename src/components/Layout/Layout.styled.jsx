@@ -7,8 +7,6 @@ export const Container = styled.div`
 `;
 
 export const MainSection = styled.main`
-  background-color: #f0f0f0;
-  color: #fff;
   padding: 0;
   height: calc(100vh - 44px);
 `;

@@ -3,7 +3,8 @@ import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import PropTypes from 'prop-types';
-
+import { HiHeart } from 'react-icons/hi';
+import { HiOutlineHeart } from 'react-icons/hi';
 import {
   CarImg,
   CarImgWrap,
@@ -14,11 +15,10 @@ import {
   CarText,
   ModelBlue,
   SecondaryInfo,
-  SecondaryCarText,
   LearnMoreBtn,
-  HeartIcon,
   IconBtn,
-  HeartIconBlue,
+  SecondaryCarInfo,
+  SecondaryCarAbout,
 } from './CarItem.styled';
 
 import {
@@ -49,8 +49,7 @@ const CarItem = ({ car }) => {
     mileage,
   } = car;
   const favorite = useSelector(state => state.favorite);
-  // console.log('favorite', favorite);
-  const followStatus = favorite.includes(id);
+  const isFavorite = favorite.includes(id);
 
   const [isModalOpen, setIsModalOpen] = useState(false);
   const openModal = () => {
@@ -72,17 +71,25 @@ const CarItem = ({ car }) => {
   const city = addressParts[1];
   const country = addressParts[2];
 
-  // const firstFunctionality = functionalities[0];
-
+  const firstFunctionality = functionalities[0]
+    .split(' ')
+    .slice(0, 1)
+    .join(' ');
+  const modelTitle = model.split(/[\s-]+/);
+  const makeTitle = make.split(/[\s-]+/);
   return (
     <Item>
       <CarImgWrap>
         <CarImg src={img} alt={make} />
         <IconBtn
-          onClick={!followStatus ? incrementFavorite : decrementFavorite}
+          onClick={!isFavorite ? incrementFavorite : decrementFavorite}
           type="button"
         >
-          {!followStatus ? <HeartIcon /> : <HeartIconBlue />}
+          {isFavorite ? (
+            <HiHeart color={'#3470ff'} size={22} />
+          ) : (
+            <HiOutlineHeart size={22} />
+          )}
         </IconBtn>
       </CarImgWrap>
       <InfoWrapper>
@@ -90,7 +97,7 @@ const CarItem = ({ car }) => {
           <CarInfo>
             <CarText>{make}</CarText>
             <ModelBlue>
-              {model}
+              {modelTitle[0]}
               <span style={{ color: 'black' }}>,</span>
             </ModelBlue>
             <CarText>{year}</CarText>
@@ -98,13 +105,17 @@ const CarItem = ({ car }) => {
           <CarText>{rentalPrice}</CarText>
         </MainInfo>
         <SecondaryInfo>
-          <SecondaryCarText>{city}</SecondaryCarText>
-          <SecondaryCarText>{country}</SecondaryCarText>
-          <SecondaryCarText>{rentalCompany}</SecondaryCarText>
-          <SecondaryCarText>{type}</SecondaryCarText>
-          <SecondaryCarText>{make}</SecondaryCarText>
-          <SecondaryCarText>{id}</SecondaryCarText>
-          {/* <SecondaryCarText>{firstFunctionality}</SecondaryCarText> */}
+          <SecondaryCarInfo>
+            <SecondaryCarAbout>{city}</SecondaryCarAbout>
+            <SecondaryCarAbout>{country}</SecondaryCarAbout>
+            <SecondaryCarAbout>{rentalCompany}</SecondaryCarAbout>
+          </SecondaryCarInfo>
+          <SecondaryCarInfo>
+            <SecondaryCarAbout>{type}</SecondaryCarAbout>
+            <SecondaryCarAbout>{makeTitle[0]}</SecondaryCarAbout>
+            <SecondaryCarAbout>{id}</SecondaryCarAbout>
+            <SecondaryCarAbout>{firstFunctionality}</SecondaryCarAbout>
+          </SecondaryCarInfo>
         </SecondaryInfo>
         <LearnMoreBtn onClick={openModal}>Learn more</LearnMoreBtn>
         {isModalOpen && (

@@ -2,7 +2,7 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import CarList from '../components/CarList/CarList';
 import { selectTotalCars } from '../redux/totalCars-slice';
-import { Title, Container } from './HomePage.styled';
+import { Title, Container, TitleBlock } from './HomePage.styled';
 
 const Favorites = () => {
   const totalCars = useSelector(selectTotalCars);

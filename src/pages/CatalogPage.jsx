@@ -54,19 +54,18 @@ const Catalog = () => {
   return (
     <Container>
       <Title></Title>
-      {isLoading ||
-        (cars?.length !== 0 ? (
-          <>
-            {/* <Filter /> */}
-            <CarList cars={cars} />
+      {cars?.length !== 0 ? (
+        <>
+          {/* <Filter /> */}
+          <CarList cars={cars} />
 
-            {totalCars.length > cars.length && (
-              <LoadMoreBtn onClick={loadMore}>Load More</LoadMoreBtn>
-            )}
-          </>
-        ) : (
-          <p>There is no cars</p>
-        ))}
+          {totalCars.length > cars.length && (
+            <LoadMoreBtn onClick={loadMore}>Load More</LoadMoreBtn>
+          )}
+        </>
+      ) : (
+        <p>There is no cars</p>
+      )}
 
       {error && <p>{error}</p>}
     </Container>
