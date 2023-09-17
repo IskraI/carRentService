@@ -5,11 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useState, useEffect } from 'react';
 
 // import Filter from '../components/Filter/Filter';
-import {
-  selectIsLoading,
-  selectError,
-  selectCars,
-} from '../redux/cars-selector';
+import { selectError, selectCars } from '../redux/cars-selector';
 import { fetchCars } from 'redux/cars-operation';
 import { LoadMoreBtn } from './CatalogPage.styled';
 import { Container, Title } from '../pages/HomePage.styled';
