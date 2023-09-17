@@ -4,7 +4,11 @@ import CarList from '../components/CarList/CarList';
 import { useDispatch, useSelector } from 'react-redux';
 import { useState, useEffect } from 'react';
 // import Filter from '../components/Filter/Filter';
-import { selectError, selectCars } from '../redux/cars-selector';
+import {
+  selectIsLoading,
+  selectError,
+  selectCars,
+} from '../redux/cars-selector';
 import { fetchCars } from 'redux/cars-operation';
 import { LoadMoreBtn } from './CatalogPage.styled';
 import { Container, Title } from '../pages/HomePage.styled';
@@ -16,6 +20,7 @@ const Catalog = () => {
   const error = useSelector(selectError);
   const totalCars = useSelector(selectTotalCars);
 
+  const isLoading = useSelector(selectIsLoading);
   const dispatch = useDispatch();
 
   const [page, setPage] = useState(1);
@@ -49,18 +54,19 @@ const Catalog = () => {
   return (
     <Container>
       <Title></Title>
-      {cars?.length !== 0 ? (
-        <>
-          {/* <Filter /> */}
-          <CarList cars={cars} />
+      {isLoading ||
+        (cars?.length !== 0 ? (
+          <>
+            {/* <Filter /> */}
+            <CarList cars={cars} />
 
-          {totalCars.length > cars.length && (
-            <LoadMoreBtn onClick={loadMore}>Load More</LoadMoreBtn>
-          )}
-        </>
-      ) : (
-        <p>There is no cars</p>
-      )}
+            {totalCars.length > cars.length && (
+              <LoadMoreBtn onClick={loadMore}>Load More</LoadMoreBtn>
+            )}
+          </>
+        ) : (
+          <p>There is no cars</p>
+        ))}
 
       {error && <p>{error}</p>}
     </Container>

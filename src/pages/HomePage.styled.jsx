@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
 import hero from '../img/ban_carent.jpg';
+import hero2 from '../img/ban_carent@2x.jpg';
 import { NavLink } from 'react-router-dom';
 export const Container = styled.div`
   display: flex;
@@ -25,6 +26,9 @@ export const ContainerHero = styled.div`
   background-position: center;
   width: 100%;
   height: calc(100vh - 44px);
+  @media (-webkit-min-device-pixel-ratio: 2) {
+    background-image: url(${hero2});
+  }
 `;
 
 export const Title = styled.h1`

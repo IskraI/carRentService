@@ -8,5 +8,5 @@ export const Container = styled.div`
 
 export const MainSection = styled.main`
   padding: 0;
-  height: calc(100vh - 44px);
+  height: calc(100vh - 445px);
 `;
