@@ -3,6 +3,7 @@ import React from 'react';
 import CarList from '../components/CarList/CarList';
 import { useDispatch, useSelector } from 'react-redux';
 import { useState, useEffect } from 'react';
+
 // import Filter from '../components/Filter/Filter';
 import {
   selectIsLoading,
@@ -54,19 +55,17 @@ const Catalog = () => {
   return (
     <Container>
       <Title></Title>
-      {isLoading ||
-        (cars?.length !== 0 ? (
-          <>
-            {/* <Filter /> */}
-            <CarList cars={cars} />
 
-            {totalCars.length > cars.length && (
-              <LoadMoreBtn onClick={loadMore}>Load More</LoadMoreBtn>
-            )}
-          </>
-        ) : (
-          <p>There is no cars</p>
-        ))}
+      {cars.length !== 0 && (
+        <>
+          {/* <Filter /> */}
+          <CarList cars={cars} />
+
+          {totalCars.length > cars.length && (
+            <LoadMoreBtn onClick={loadMore}>Load More</LoadMoreBtn>
+          )}
+        </>
+      )}
 
       {error && <p>{error}</p>}
     </Container>
