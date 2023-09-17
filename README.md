@@ -1,5 +1,3 @@
-# carRentService
-
 <h1 align="center">Car Rent Service</h1>
 
 ## About this project
